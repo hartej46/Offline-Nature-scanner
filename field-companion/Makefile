@@ -35,7 +35,7 @@ mobile:
 	@cd mobile && npx expo start --go
 
 mobile-apk:
-	@cd mobile && npx eas build -p android --profile preview
+	@cd mobile && npx eas-cli build -p android --profile preview
 
 docker-build:
 	@cd backend && docker build -t field-companion-backend:latest .

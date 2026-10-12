@@ -143,7 +143,7 @@ To build a standalone APK for Android using Expo EAS:
 cd field-companion/mobile
 
 # 2. Build standalone APK with EAS
-npx eas build -p android --profile preview
+npx eas-cli build -p android --profile preview
 
 # 3. Once EAS completes, copy the generated .apk to your backend downloads:
 cp path/to/build.apk ../backend/data/downloads/FieldCompanion.apk
