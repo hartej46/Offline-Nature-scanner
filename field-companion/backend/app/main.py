@@ -9,8 +9,9 @@ import uuid
 import logging
 from datetime import datetime
 
+import re
 import urllib.parse
-from fastapi import FastAPI, UploadFile, File, Form, HTTPException, Query
+from fastapi import FastAPI, UploadFile, File, Form, HTTPException, Query, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse, FileResponse, RedirectResponse
 from pydantic import BaseModel
@@ -73,6 +74,17 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+@app.middleware("http")
+async def redirect_duplicate_slashes(request: Request, call_next):
+    """Normalize any double slashes in incoming request path to prevent 404 errors."""
+    raw_path = request.scope.get("path", "")
+    if "//" in raw_path:
+        clean_path = re.sub(r"/+", "/", raw_path)
+        query = request.url.query
+        redirect_url = clean_path + (f"?{query}" if query else "")
+        return RedirectResponse(url=redirect_url, status_code=307)
+    return await call_next(request)
 
 # Data directories
 DATA_DIR = os.getenv("DATA_DIR", "./data")
@@ -693,29 +705,30 @@ DOWNLOADS_DIR = os.path.join(DATA_DIR, "downloads")
 os.makedirs(DOWNLOADS_DIR, exist_ok=True)
 APK_FILENAME = "FieldCompanion.apk"
 DEFAULT_APK_PATH = os.path.join(DOWNLOADS_DIR, APK_FILENAME)
+DEFAULT_EAS_APK_URL = "https://expo.dev/artifacts/eas/-8Qv1qHVCqz2gzsctuGmo8FeasG1ja7aP2T2qS-SZUs.apk"
 
 
 @app.get("/download/app/info")
 async def get_mobile_app_info():
     """Return download information and metadata for the mobile companion app."""
     apk_path = os.getenv("MOBILE_APP_PATH", DEFAULT_APK_PATH)
-    external_url = os.getenv("MOBILE_APP_DOWNLOAD_URL")
-    has_file = os.path.exists(apk_path) and os.path.getsize(apk_path) > 0
-    file_size = os.path.getsize(apk_path) if has_file else 0
+    external_url = os.getenv("MOBILE_APP_DOWNLOAD_URL", DEFAULT_EAS_APK_URL)
+    has_local_file = os.path.exists(apk_path) and os.path.getsize(apk_path) > 1024 * 1024
+    file_size = os.path.getsize(apk_path) if has_local_file else 72779703
 
     return {
         "app_name": "Field Companion Mobile",
         "version": "1.0.0",
         "platform": "Android (APK) & Expo Go (iOS/Android)",
         "filename": APK_FILENAME,
-        "has_binary": has_file,
+        "has_binary": True,
         "file_size_bytes": file_size,
-        "file_size_formatted": f"{round(file_size / (1024 * 1024), 1)} MB" if file_size >= 1024 * 1024 else (f"{round(file_size / 1024, 1)} KB" if file_size > 0 else "52.4 MB"),
+        "file_size_formatted": f"{round(file_size / (1024 * 1024), 1)} MB",
         "download_url": "/download/app",
         "external_download_url": external_url,
         "expo_slug": "field-companion",
         "instructions": [
-            "Download FieldCompanion.apk directly from this server to your Android device",
+            "Download FieldCompanion.apk directly to your Android device",
             "Open the downloaded APK and tap 'Install' (allow 'Install Unknown Apps' if prompted)",
             "Alternatively, run instantly on iOS or Android using Expo Go"
         ],
@@ -726,10 +739,11 @@ async def get_mobile_app_info():
 @app.get("/download/field-companion.apk")
 async def download_mobile_app():
     """Directly stream the Android APK file from the server or redirect to configured download URL."""
-    external_url = os.getenv("MOBILE_APP_DOWNLOAD_URL")
+    external_url = os.getenv("MOBILE_APP_DOWNLOAD_URL", DEFAULT_EAS_APK_URL)
     apk_path = os.getenv("MOBILE_APP_PATH", DEFAULT_APK_PATH)
 
-    if os.path.exists(apk_path) and os.path.getsize(apk_path) > 0:
+    # If an actual compiled local APK exists on disk (> 1 MB)
+    if os.path.exists(apk_path) and os.path.getsize(apk_path) > 1024 * 1024:
         return FileResponse(
             path=apk_path,
             media_type="application/vnd.android.package-archive",
