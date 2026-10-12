@@ -1,0 +1,27 @@
+# Core
+fastapi>=0.115.0
+uvicorn[standard]>=0.30.0
+python-dotenv>=1.0.0
+python-multipart>=0.0.9
+
+# LLM client
+openai>=1.50.0
+
+# Database
+aiosqlite>=0.20.0
+
+# Audio / Vision
+pillow>=10.0.0
+soundfile>=0.12.0
+
+# BirdNET
+birdnetlib>=0.15.0
+
+# Species data
+requests>=2.31.0
+
+# Testing
+pytest>=8.0.0
+
+# TTS
+# piper-tts  # optional, macOS `say` is the fallback

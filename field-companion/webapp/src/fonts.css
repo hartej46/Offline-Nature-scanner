@@ -1,0 +1,32 @@
+/*
+ * Field Companion — 100% Offline Font System
+ * Checkpoint 3.1: Zero internet dependencies. No external Google Fonts CDN calls.
+ * Uses local font declarations with native OS typographic fallbacks.
+ */
+
+/* Inter — Clean UI text */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: local('Inter'), local('-apple-system'), local('BlinkMacSystemFont'), local('Segoe UI'), local('Roboto');
+}
+
+/* Source Serif 4 — Field-guide headings & species names */
+@font-face {
+  font-family: 'Source Serif 4';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: local('Source Serif 4'), local('Charter'), local('Bitstream Charter'), local('Georgia'), local('Times New Roman');
+}
+
+/* JetBrains Mono — Scientific binomials & metadata tokens */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400 500;
+  font-display: swap;
+  src: local('JetBrains Mono'), local('SF Mono'), local('Menlo'), local('Monaco'), local('Consolas');
+}

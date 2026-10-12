@@ -1,0 +1,38 @@
+{
+  "expo": {
+    "name": "Field Companion",
+    "slug": "field-companion",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "resizeMode": "contain",
+      "backgroundColor": "#F5F1E8"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.fieldcompanion.app",
+      "infoPlist": {
+        "NSCameraUsageDescription": "Field Companion needs access to the camera to photograph and identify species in the field.",
+        "NSMicrophoneUsageDescription": "Field Companion needs access to the microphone to record bird calls and voice queries in the field.",
+        "NSPhotoLibraryUsageDescription": "Field Companion needs photo library access to select photos for species identification."
+      }
+    },
+    "android": {
+      "package": "com.fieldcompanion.app",
+      "versionCode": 1,
+      "adaptiveIcon": {
+        "backgroundColor": "#F5F1E8"
+      },
+      "permissions": [
+        "CAMERA",
+        "RECORD_AUDIO",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE"
+      ]
+    },
+    "plugins": [
+      "expo-asset"
+    ]
+  }
+}

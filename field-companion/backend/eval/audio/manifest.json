@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "filename": "oriental_magpie_robin.wav",
+    "common_name": "Oriental Magpie-Robin",
+    "sci_name": "Copsychus saularis",
+    "freq_range": "3200-4800 Hz",
+    "notes": "Melodic whistling song, clear musical whistles",
+    "licence": "Creative Commons Attribution / Benchmark Synthetic Audio"
+  },
+  {
+    "id": 2,
+    "filename": "red_vented_bulbul.wav",
+    "common_name": "Red-vented Bulbul",
+    "sci_name": "Pycnonotus cafer",
+    "freq_range": "2600-3800 Hz",
+    "notes": "Percussive rhythmic chatter, sharp short bursts",
+    "licence": "Creative Commons Attribution / Benchmark Synthetic Audio"
+  },
+  {
+    "id": 3,
+    "filename": "common_tailorbird.wav",
+    "common_name": "Common Tailorbird",
+    "sci_name": "Orthotomus sutorius",
+    "freq_range": "4200-5600 Hz",
+    "notes": "Loud rapid repetitive chweep-chweep calls",
+    "licence": "Creative Commons Attribution / Benchmark Synthetic Audio"
+  },
+  {
+    "id": 4,
+    "filename": "asian_koel.wav",
+    "common_name": "Asian Koel",
+    "sci_name": "Eudynamys scolopaceus",
+    "freq_range": "1400-2400 Hz",
+    "notes": "Ascending fluty koo-OO calls building in pitch",
+    "licence": "Creative Commons Attribution / Benchmark Synthetic Audio"
+  },
+  {
+    "id": 5,
+    "filename": "black_drongo.wav",
+    "common_name": "Black Drongo",
+    "sci_name": "Dicrurus macrocercus",
+    "freq_range": "2200-4400 Hz",
+    "notes": "Harsh metallic rasping whistles and mimicry",
+    "licence": "Creative Commons Attribution / Benchmark Synthetic Audio"
+  },
+  {
+    "id": 6,
+    "filename": "spotted_dove.wav",
+    "common_name": "Spotted Dove",
+    "sci_name": "Spilopelia chinensis",
+    "freq_range": "600-1100 Hz",
+    "notes": "Low mellow repetitive cooing notes",
+    "licence": "Creative Commons Attribution / Benchmark Synthetic Audio"
+  },
+  {
+    "id": 7,
+    "filename": "common_myna.wav",
+    "common_name": "Common Myna",
+    "sci_name": "Acridotheres tristis",
+    "freq_range": "1800-3600 Hz",
+    "notes": "Guttural clucks and descending whistles",
+    "licence": "Creative Commons Attribution / Benchmark Synthetic Audio"
+  },
+  {
+    "id": 8,
+    "filename": "rose_ringed_parakeet.wav",
+    "common_name": "Rose-ringed Parakeet",
+    "sci_name": "Psittacula krameri",
+    "freq_range": "2400-4600 Hz",
+    "notes": "Shrill piercing flight screech kee-ak",
+    "licence": "Creative Commons Attribution / Benchmark Synthetic Audio"
+  },
+  {
+    "id": 9,
+    "filename": "crimson_sunbird.wav",
+    "common_name": "Crimson Sunbird",
+    "sci_name": "Aethopyga siparaja",
+    "freq_range": "5800-7500 Hz",
+    "notes": "Very high frequency thin metallic rapid chips",
+    "licence": "Creative Commons Attribution / Benchmark Synthetic Audio"
+  },
+  {
+    "id": 10,
+    "filename": "greater_coucal.wav",
+    "common_name": "Greater Coucal",
+    "sci_name": "Centropus sinensis",
+    "freq_range": "400-750 Hz",
+    "notes": "Deep resonant rhythmic booming oop-oop series",
+    "licence": "Creative Commons Attribution / Benchmark Synthetic Audio"
+  }
+]

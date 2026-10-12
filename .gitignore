@@ -1,0 +1,20 @@
+# Node / Webapp / Mobile
+node_modules/
+.expo/
+dist/
+.output/
+
+# Python / Backend
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.env
+data/uploads/
+**/data/uploads/*
+*.log
+
+# System
+.DS_Store
+.vscode/

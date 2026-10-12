@@ -1,0 +1,40 @@
+id,type,query,expected_species,expected_sci,notes
+1,text,"I saw a small black bird with a white wing patch",Oriental Magpie-Robin,Copsychus saularis,Common garden bird
+2,text,"What bird has bright yellow body and black head?",Black-hooded Oriole,Oriolus xanthornus,Canopy bird
+3,text,"Saw a small brown bird sewing leaves together for its nest",Common Tailorbird,Orthotomus sutorius,Classic tailorbird
+4,text,"A glossy black bird with a deeply forked tail sitting on a wire",Black Drongo,Dicrurus macrocercus,King crow
+5,text,"Tiny bird hovering around red flowers with curved beak",Crimson Sunbird,Aethopyga siparaja,Sunbird
+6,text,"Large blue and white magpie with very long tail and red bill",Red-billed Blue-Magpie,Urocissa erythroryncha,Corvid
+7,text,"Greyish bird with black crest and red vent under its tail",Red-vented Bulbul,Pycnonotus cafer,Ubiquitous bulbul
+8,text,"Large dark eagle soaring over forested hills",Black Eagle,Ictinaetus malayensis,Raptor
+9,text,"Medium woodpecker with golden yellow back",Black-rumped Flameback,Dinopium benghalense,Woodpecker
+10,text,"Blue bird with yellow bill in the forest",Asian Fairy-bluebird,Irena puella,Forest bird
+11,text,"A small black bird with red underparts and tail",Black Redstart,Phoenicurus ochruros,Winter visitor
+12,text,"Green pigeon sitting on a fig tree",Yellow-footed Green-Pigeon,Treron phoenicopterus,State bird of Maharashtra
+13,text,"Large black and yellow bird with huge curved casque bill",Great Hornbill,Buceros bicornis,Hornbill
+14,text,"Small bright blue kingfisher near a creek",Common Kingfisher,Alcedo atthis,Kingfisher
+15,text,"Brown spotted dove walking on ground making gentle cooing",Spotted Dove,Spilopelia chinensis,Dove
+16,text,"Large mammal with black fur and white V mark on chest",Asiatic black bear,Ursus thibetanus,Himalayan bear
+17,text,"Primate with grey body and black face sitting in trees",Northern plains gray langur,Semnopithecus entellus,Common langur
+18,text,"Spotted deer grazing in open meadow",Chital,Axis axis,Spotted deer
+19,text,"Wild goat with curved horns on rocky cliff",Himalayan tahr,Hemitragus jemlahicus,Caprid
+20,text,"Large wild cattle with dark coat and white stockings",Gaur,Bos gaurus,Indian bison
+21,text,"Small striped squirrel running on tree trunk",Three-striped palm squirrel,Funambulus palmarum,Rodent
+22,text,"Wild dog pack hunting in forest",Dhole,Cuon alpinus,Asiatic wild dog
+23,text,"Carnivore with spots and rosette patterns",Leopard,Panthera pardus,Big cat
+24,text,"Large striped cat near waterhole",Tiger,Panthera tigris,Apex predator
+25,text,"Grey mongoose moving through tall grass",Indian grey mongoose,Urva edwardsii,Herpestid
+26,photo,"leaf.jpg",Plant observation,,Synthetic test leaf
+27,photo,"flower.jpg",Flowering plant,,Synthetic flower test
+28,photo,"bark.jpg",Tree bark observation,,Synthetic bark test
+29,audio,"audio/oriental_magpie_robin.wav",Oriental Magpie-Robin,Copsychus saularis,Melodic whistling phrases with rising and falling notes
+30,audio,"audio/red_vented_bulbul.wav",Red-vented Bulbul,Pycnonotus cafer,Percussive rhythmic chatter with short bursts
+31,audio,"audio/common_tailorbird.wav",Common Tailorbird,Orthotomus sutorius,Loud rapid repetitive high-pitched chweep
+32,audio,"audio/asian_koel.wav",Asian Koel,Eudynamys scolopaceus,Ascending resonant fluty whistle koo-OO
+33,audio,"audio/black_drongo.wav",Black Drongo,Dicrurus macrocercus,Harsh metallic rasping whistles and mimicry
+34,audio,"audio/spotted_dove.wav",Spotted Dove,Spilopelia chinensis,Low mellow repetitive cooing notes
+35,audio,"audio/common_myna.wav",Common Myna,Acridotheres tristis,Guttural clucks and descending whistles
+36,audio,"audio/rose_ringed_parakeet.wav",Rose-ringed Parakeet,Psittacula krameri,Shrill piercing flight screech kee-ak
+37,audio,"audio/crimson_sunbird.wav",Crimson Sunbird,Aethopyga siparaja,Very high frequency thin metallic rapid chips
+38,audio,"audio/greater_coucal.wav",Greater Coucal,Centropus sinensis,Deep resonant rhythmic booming oop-oop series
+

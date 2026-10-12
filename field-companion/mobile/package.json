@@ -1,0 +1,37 @@
+{
+  "name": "field-companion-mobile",
+  "version": "0.1.0",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web",
+    "test": "jest",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "@react-native/codegen": "^0.86.3",
+    "babel-preset-expo": "~57.0.14",
+    "expo": "^57.0.27",
+    "expo-asset": "~57.0.19",
+    "expo-av": "^16.0.8",
+    "expo-blob": "^57.0.2",
+    "expo-constants": "~57.0.21",
+    "expo-device": "~57.0.2",
+    "expo-file-system": "~57.0.7",
+    "expo-image-picker": "~57.0.20",
+    "expo-status-bar": "~57.0.1",
+    "flow-parser": "^0.250.0",
+    "react": "^19.2.3",
+    "react-native": "^0.86.3",
+    "react-native-safe-area-context": "~5.7.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.29.7",
+    "@babel/preset-env": "^7.25.0",
+    "@types/react": "~19.2.4",
+    "typescript": "~6.0.3"
+  }
+}

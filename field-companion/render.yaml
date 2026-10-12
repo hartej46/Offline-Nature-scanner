@@ -1,0 +1,49 @@
+# Render Blueprint — Field Companion
+# Automatically deploys the FastAPI Backend (Docker) and React Webapp (Static Site)
+
+services:
+  # -------------------------------------------------------------------------
+  # 1. FastAPI Backend API
+  # -------------------------------------------------------------------------
+  - type: web
+    name: field-companion-backend
+    runtime: docker
+    dockerContext: ./field-companion/backend
+    dockerfilePath: ./field-companion/backend/Dockerfile
+    plan: starter
+    region: oregon
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: PORT
+        value: 8000
+      - key: DATA_DIR
+        value: /app/data
+      - key: DB_PATH
+        value: /app/data/field_companion.db
+      # Direct Internet Model Download URL (No cloud API key needed!)
+      - key: MODEL_DOWNLOAD_URL
+        value: https://huggingface.co/bartowski/gemma-2-2b-it-GGUF/resolve/main/gemma-2-2b-it-Q4_K_M.gguf
+      - key: REGION_BBOX
+        value: 6.5,68.1,35.7,97.4
+      - key: MOBILE_APP_DOWNLOAD_URL
+        sync: false
+    disk:
+      name: field-companion-data
+      mountPath: /app/data
+      sizeGB: 10
+
+  # -------------------------------------------------------------------------
+  # 2. React Web Frontend (Vite)
+  # -------------------------------------------------------------------------
+  - type: static
+    name: field-companion-web
+    buildCommand: cd field-companion/webapp && npm install && npm run build
+    staticPublishPath: ./field-companion/webapp/dist
+    autoDeploy: true
+    envVars:
+      - key: VITE_API_BASE
+        fromService:
+          type: web
+          name: field-companion-backend
+          property: url

@@ -1,0 +1,199 @@
+/*
+ * Field Companion — Landing Page Design System
+ * Field-notebook aesthetic: paper (#F5F1E8), ink (#1C1C1A), moss green (#4F6B3A).
+ * Responsive layout for mobile, tablet, and desktop.
+ */
+
+@import url('./fonts.css');
+
+:root {
+  /* Colors */
+  --color-paper: #F5F1E8;
+  --color-paper-card: #FFFFFF;
+  --color-paper-subtle: #ECE7DC;
+  --color-ink: #1C1C1A;
+  --color-moss: #4F6B3A;
+  --color-moss-light: #6B8A52;
+  --color-moss-dark: #3A5029;
+  --color-divider: rgba(28, 28, 26, 0.12);
+  --color-muted: rgba(28, 28, 26, 0.65);
+  --color-amber: #A68B3A;
+  --color-overlay: rgba(28, 28, 26, 0.04);
+
+  /* Typography */
+  --font-serif: 'Source Serif 4', 'Georgia', serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', 'SF Mono', 'Consolas', monospace;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 2.25rem;
+  --text-4xl: 3rem;
+
+  /* Spacing */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3.5rem;
+  --space-3xl: 5rem;
+
+  /* Layout */
+  --content-max-width: 1040px;
+  --border-radius: 6px;
+  --border-radius-lg: 12px;
+  --border-radius-pill: 9999px;
+  --shadow-sm: 0 1px 3px rgba(28, 28, 26, 0.06);
+  --shadow-md: 0 4px 14px rgba(28, 28, 26, 0.08);
+  --shadow-lg: 0 12px 32px rgba(28, 28, 26, 0.12);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-ink);
+  background-color: var(--color-paper);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Typography */
+h1, h2, h3, h4 {
+  font-family: var(--font-serif);
+  color: var(--color-ink);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: var(--text-3xl);
+  letter-spacing: -0.02em;
+}
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: var(--text-4xl);
+  }
+}
+
+h2 {
+  font-size: var(--text-2xl);
+  letter-spacing: -0.01em;
+}
+
+h3 {
+  font-size: var(--text-xl);
+}
+
+p {
+  color: var(--color-ink);
+}
+
+.mono {
+  font-family: var(--font-mono);
+}
+
+/* Buttons */
+button {
+  font-family: inherit;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  background-color: var(--color-moss);
+  color: #FFFFFF;
+  font-weight: 600;
+  font-size: var(--text-base);
+  padding: 0.85rem 1.6rem;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--color-moss-dark);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+  box-shadow: 0 2px 6px rgba(79, 107, 58, 0.25);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-moss-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(79, 107, 58, 0.35);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  background-color: var(--color-paper-card);
+  color: var(--color-ink);
+  font-weight: 500;
+  font-size: var(--text-base);
+  padding: 0.85rem 1.4rem;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--color-divider);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-paper-subtle);
+  border-color: var(--color-ink);
+}
+
+/* Status dots */
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.status-online {
+  background-color: var(--color-moss);
+  box-shadow: 0 0 0 3px rgba(79, 107, 58, 0.2);
+}
+
+.status-offline {
+  background-color: var(--color-amber);
+}
+
+/* Icons */
+.icon {
+  width: 20px;
+  height: 20px;
+  stroke-width: 1.8;
+  stroke: currentColor;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
