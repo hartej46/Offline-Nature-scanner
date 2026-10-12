@@ -35,15 +35,12 @@ services:
 
   # -------------------------------------------------------------------------
   # 2. React Web Frontend (Vite)
-  # -------------------------------------------------------------------------
-  - type: static
+  - type: web
     name: field-companion-web
+    runtime: static
     buildCommand: cd field-companion/webapp && npm install && npm run build
     staticPublishPath: ./field-companion/webapp/dist
     autoDeploy: true
     envVars:
       - key: VITE_API_BASE
-        fromService:
-          type: web
-          name: field-companion-backend
-          property: url
+        value: https://field-companion-backend.onrender.com
